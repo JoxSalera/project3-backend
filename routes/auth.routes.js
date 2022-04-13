@@ -7,7 +7,8 @@ const { isAuthenticated } = require("../middleware/jwt.middleware");
 // Requires the User model in order to interact with the database
 const User = require("../models/User.model");
 
-router.post("/auth/signup", async (req, res, next) => {
+router.post("/signup", async (req, res, next) => {
+  console.log("hey");
   const { name, username, email, password, picture } = req.body;
 
   const foundUser = await User.findOne({ username });
@@ -33,7 +34,7 @@ router.post("/auth/signup", async (req, res, next) => {
   res.status(201).json(createdUser);
 });
 
-router.post("/auth/login", async (req, res, next) => {
+router.post("/login", async (req, res, next) => {
   const { username, password } = req.body;
   const foundUser = await User.findOne({ username, password });
 
@@ -57,7 +58,7 @@ router.post("/auth/login", async (req, res, next) => {
 }); // End of router.post
 
 // To verify that authentication middleware is working Postman
-router.get("/auth/verify", isAuthenticated, (req, res, next) => {
+router.get("/verify", isAuthenticated, (req, res, next) => {
   res.status(200).json(req.payload);
 });
 
