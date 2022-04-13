@@ -1,4 +1,4 @@
 # project3-backend
 
-Laurie Bruneau,
+Laurie Bruneau
 Alex Rojas
