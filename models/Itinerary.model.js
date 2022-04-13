@@ -18,10 +18,12 @@ const itinerarySchema = new Schema(
         ref: "Tag",
       },
     ],
+
+    rating: Number,
   },
   { timeStamps: true }
 );
 
 const Itinerary = model("Itinerary", itinerarySchema);
 
-export default Itinerary;
+module.exports = Itinerary;

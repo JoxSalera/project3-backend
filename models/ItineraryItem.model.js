@@ -26,4 +26,4 @@ const itineraryItemSchema = new Schema({
 
 const ItineraryItem = model("ItineraryItem", itineraryItemSchema);
 
-export default ItineraryItem;
+module.exports = ItineraryItem;
