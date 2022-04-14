@@ -11,3 +11,5 @@ const favoritesSchema = new Schema(
 const Favorites = model("Tag", favoritesSchema);
 
 module.exports = Favorites;
+
+
