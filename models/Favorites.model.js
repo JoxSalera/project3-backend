@@ -5,7 +5,7 @@ const favoritesSchema = new Schema(
     user: { type: Schema.Types.ObjectId, ref: "User" },
     itinerary: { type: Schema.Types.ObjectId, ref: "Itinerary" },
   },
-  { timeStamp: true }
+  { timestamp: true }
 );
 
 const Favorites = model("Tag", favoritesSchema);

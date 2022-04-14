@@ -18,10 +18,9 @@ const itinerarySchema = new Schema(
         ref: "Tag",
       },
     ],
-
     rating: Number,
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
 const Itinerary = model("Itinerary", itinerarySchema);
