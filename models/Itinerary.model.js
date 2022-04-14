@@ -24,4 +24,4 @@ const itinerarySchema = new Schema(
 
 const Itinerary = model("Itinerary", itinerarySchema);
 
-export default Itinerary;
+module.exports = User;
