@@ -52,7 +52,6 @@ const itinerarySeed = async () => {
       timeStamps: true,
     },
   ];
-
   const firstItinerary = await Itinerary.create(itineraries);
 };
 
