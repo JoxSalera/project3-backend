@@ -8,6 +8,6 @@ const favoritesSchema = new Schema(
   { timestamp: true }
 );
 
-const Favorites = model("Tag", favoritesSchema);
+const Favorite = model("Favorite", favoritesSchema);
 
-module.exports = Favorites;
+module.exports = Favorite;

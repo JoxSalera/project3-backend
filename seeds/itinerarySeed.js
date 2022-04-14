@@ -36,7 +36,7 @@ const itinerarySeed = async () => {
     {
       name: "Brussels express",
       creator: rufus._id,
-      city: "Lille",
+      city: "Brussels",
       tags: [night._id],
     },
     {
