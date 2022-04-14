@@ -16,10 +16,44 @@ const itinerarySeed = async () => {
       tags: [night._id],
       timeStamps: true,
     },
+    {
+      name: "Barcelona express",
+      creator: rufus._id,
+      city: "Barcelona",
+      tags: [night._id],
+      timeStamps: true,
+    },
+    {
+      name: "Berlin express",
+      creator: rufus._id,
+      city: "Berlin",
+      tags: [night._id],
+      timeStamps: true,
+    },
+    {
+      name: "Paris express",
+      creator: rufus._id,
+      city: "Paris",
+      tags: [night._id],
+      timeStamps: true,
+    },
+    {
+      name: "Brussels express",
+      creator: rufus._id,
+      city: "Lille",
+      tags: [night._id],
+      timeStamps: true,
+    },
+    {
+      name: "Marseille express",
+      creator: rufus._id,
+      city: "Marseille",
+      tags: [night._id],
+      timeStamps: true,
+    },
   ];
-  //   const firstItinerary = await Itinerary.create(itineraries);
 
-  //   const itineraryItems = await Itinerary.create(firstItinerary);
+  const firstItinerary = await Itinerary.create(itineraries);
 };
 
 const createItinerary = async () => {
