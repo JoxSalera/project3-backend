@@ -10,4 +10,6 @@ const favoritesSchema = new Schema(
 
 const Favorites = model("Tag", favoritesSchema);
 
-export default Itinerary;
+module.exports = Favorites;
+
+
