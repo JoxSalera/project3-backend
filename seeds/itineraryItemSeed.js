@@ -4,7 +4,7 @@ const ItineraryItem = require("../models/ItineraryItem.model");
 const Itinerary = require("../models/Itinerary.model");
 
 const itineraryItemsSeed = async () => {
-  const itineraryId = await Itinerary.findOne({ name: "Madrid express" });
+  const itineraryId = await Itinerary.findOne({ name: "Barcelona express" });
 
   const itineraryItems = [
     {
@@ -13,9 +13,9 @@ const itineraryItemsSeed = async () => {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
       itinerary: itineraryId._id,
       address: {
-        street: "Louvre",
-        streetNumber: 125,
-        postCode: 75001,
+        street: "Pl. de la Concorde",
+        streetNumber: "",
+        postCode: "75001 Paris",
       },
       picture: "",
       googlePlaceId: "",
@@ -26,9 +26,9 @@ const itineraryItemsSeed = async () => {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
       itinerary: itineraryId._id,
       address: {
-        street: "Louvre",
-        streetNumber: 125,
-        postCode: 75001,
+        street: "Pont Alexandre III",
+        streetNumber: "",
+        postCode: "75008 Paris",
       },
       picture: "",
       googlePlaceId: "",
@@ -39,9 +39,9 @@ const itineraryItemsSeed = async () => {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
       itinerary: itineraryId._id,
       address: {
-        street: "Louvre",
-        streetNumber: 125,
-        postCode: 75001,
+        street: "Kirchhofstraße (BDSM Lounge Berlin)",
+        streetNumber: 44,
+        postCode: "12055 Berlin",
       },
       picture: "",
       googlePlaceId: "",
@@ -52,9 +52,9 @@ const itineraryItemsSeed = async () => {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
       itinerary: itineraryId._id,
       address: {
-        street: "Louvre",
-        streetNumber: 125,
-        postCode: 75001,
+        street: "Rue Berthelot",
+        streetNumber: 4,
+        postCode: "13014 Marseille",
       },
       picture: "",
       googlePlaceId: "",
@@ -65,9 +65,9 @@ const itineraryItemsSeed = async () => {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
       itinerary: itineraryId._id,
       address: {
-        street: "Louvre",
-        streetNumber: 125,
-        postCode: 75001,
+        street: "Carrer de Còrsega (La Pepita)",
+        streetNumber: 343,
+        postCode: "08037 Barcelona",
       },
       picture: "",
       googlePlaceId: "",
@@ -78,9 +78,9 @@ const itineraryItemsSeed = async () => {
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
       itinerary: itineraryId._id,
       address: {
-        street: "Louvre",
-        streetNumber: 125,
-        postCode: 75001,
+        street: "Imp. de la Fidélité (Delirium Café)",
+        streetNumber: 4,
+        postCode: "1000 Bruxelles",
       },
       picture: "",
       googlePlaceId: "",

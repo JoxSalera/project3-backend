@@ -14,42 +14,36 @@ const itinerarySeed = async () => {
       creator: rufus._id,
       city: "Madrid",
       tags: [night._id],
-      timeStamps: true,
     },
     {
       name: "Barcelona express",
       creator: rufus._id,
       city: "Barcelona",
       tags: [night._id],
-      timeStamps: true,
     },
     {
       name: "Berlin express",
       creator: rufus._id,
       city: "Berlin",
       tags: [night._id],
-      timeStamps: true,
     },
     {
       name: "Paris express",
       creator: rufus._id,
       city: "Paris",
       tags: [night._id],
-      timeStamps: true,
     },
     {
       name: "Brussels express",
       creator: rufus._id,
-      city: "Lille",
+      city: "Brussels",
       tags: [night._id],
-      timeStamps: true,
     },
     {
       name: "Marseille express",
       creator: rufus._id,
       city: "Marseille",
       tags: [night._id],
-      timeStamps: true,
     },
   ];
 
