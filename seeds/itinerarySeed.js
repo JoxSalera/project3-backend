@@ -17,9 +17,7 @@ const itinerarySeed = async () => {
       timeStamps: true,
     },
   ];
-  //   const firstItinerary = await Itinerary.create(itineraries);
-
-  //   const itineraryItems = await Itinerary.create(firstItinerary);
+  const firstItinerary = await Itinerary.create(itineraries);
 };
 
 const createItinerary = async () => {
