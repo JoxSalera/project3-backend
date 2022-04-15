@@ -36,7 +36,8 @@ router.post("/signup", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
   const { username, password } = req.body;
-  const foundUser = await User.findOne({ username, password });
+  const foundUser = await User.findOne({ username });
+  console.log(foundUser);
 
   if (!foundUser) {
     res.status(401).json({ error: "Credentials not found" });
@@ -44,7 +45,7 @@ router.post("/login", async (req, res, next) => {
   }
 
   if (bcrypt.compareSync(password, foundUser.password)) {
-    const payload = { username };
+    const payload = { username, _id: foundUser._id };
 
     const authToken = jsonwebtoken.sign(payload, process.env.TOKEN_SECRET, {
       algorithm: "HS256",
@@ -57,7 +58,6 @@ router.post("/login", async (req, res, next) => {
   }
 }); // End of router.post
 
-// To verify that authentication middleware is working Postman
 router.get("/verify", isAuthenticated, (req, res, next) => {
   res.status(200).json(req.payload);
 });

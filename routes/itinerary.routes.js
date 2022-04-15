@@ -1,74 +1,95 @@
-// const express = require("express");
-// const router = express.Router();
-// const mongoose = require("mongoose");
+const router = require("express").Router();
+const Itinerary = require("../models/Itinerary.model");
+const ItineraryItem = require("../models/ItineraryItem.model");
+const Tag = require("../models/Tag.model");
+const User = require("../models/User.model");
 
-// const Itinerary = require("../models/Itinerary.model");
-// const ItineraryItem = require("../models/ItineraryItem.model");
+// GET ALL ITINERARIES
+router.get("/itineraries", async (req, res, next) => {
+  try {
+    const allItineraries = await Itinerary.find().populate("creator tags");
+    res.status(200).json(allItineraries);
+  } catch (err) {
+    console.log(err, "ERROR ON GET /ITINERARIES ROUTE");
+  }
+});
 
-// //  POST /api/itineraries  -  Creates a new itinerary
-// router.post("/itineraries", (req, res, next) => {
-//   const { name, creator, city } = req.body;
+// GET ITINERARY DETAILS
+router.get("/itinerary/:itineraryId", async (req, res, next) => {
+  try {
+    const { itineraryId } = req.params;
+    const itineraryDetails = await ItineraryItem.find({
+      itinerary: itineraryId,
+    }).populate("itinerary");
+    res.status(200).json(itineraryDetails);
+  } catch (err) {
+    console.log(err, "ERROR ON ITINERARY/:ID PAGE!");
+  }
+});
 
-//   Itinerary.create({ name, creator, city, tags: [] })
-//     .then((response) => res.json(response))
-//     .catch((err) => res.json(err));
-// });
+// CREATE ITINERARIES
+router.post("/new-itinerary", async (req, res, next) => {
+  try {
+    const foundUser = User.findOne({ username: req?.payload?.username });
+    const newItinerary = await Itinerary.create({
+      name: req.body.name,
+      city: req.body.city,
+      tags: req.body.tags,
+      creator: foundUser?._id,
+    });
+    const items = req.body.items.map((item) => {
+      const betterItem = { ...item, itinerary: newItinerary._id };
+      return betterItem;
+    });
+    const newItems = await ItineraryItem.create(items);
+    res.status(201).json({
+      newItems,
+      newItinerary,
+      message: "Itinerary and its items created!",
+    });
+  } catch (err) {
+    console.log(err, "ERROR ON PROFILE ROUTE - POST!");
+  }
+});
 
-// //  GET /api/itineraries -  Retrieves all of the itineraries
-// router.get("/itineraries", (req, res, next) => {
-//   Itinerary.find()
-//     .populate("tasks")
-//     .then((allItineraries) => res.json(allItineraries))
-//     .catch((err) => res.json(err));
-// });
+// UPDATE
+router.put("/edit-itinerary/:itineraryId", async (req, res, next) => {
+  try {
+    const { itineraryId } = req.params;
+    const editItinerary = await Itinerary.findByIdAndUpdate(
+      itineraryId,
+      req.body
+    ).populate("creator tags");
+    res.status(200).json([editItinerary, { message: "Itinerary updated!!" }]);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
-// //  GET /api/projects/:projectId -  Retrieves a specific project by id
-// router.get("/projects/:projectId", (req, res, next) => {
-//   const { projectId } = req.params;
+// DELETE
+router.delete("/delete-itinerary/:itineraryId", async (req, res, next) => {
+  try {
+    const { itineraryId } = req.params;
+    const deleteItinerary = await Itinerary.findByIdAndDelete(itineraryId);
+    res.status(200).json({ deleteItinerary, message: "Itinerary deleted!!" });
+  } catch (err) {
+    console.log(err, "ERROR ON DELETE ITINERARY ROUTE");
+  }
+});
 
-//   if (!mongoose.Types.ObjectId.isValid(projectId)) {
-//     res.status(400).json({ message: "Specified id is not valid" });
-//     return;
-//   }
+// DELETE ITEMS
+router.delete("/delete-itinerary-item/:itemId", async (req, res, next) => {
+  try {
+    const { itineraryItemId } = req.params;
+    const deleteItineraryItem = await ItineraryItem.findByIdAndDelete(
+      itineraryItemId
+    );
+    res
+      .status(200)
+      .json({ deleteItineraryItem, message: "Itinerary item deleted!!" });
+  } catch (err) {
+    console.log(err, "ERROR ON DELETE ITINERARY ROUTE");
+  }
+});
 
-//   // Each Project document has `tasks` array holding `_id`s of Task documents
-//   // We use .populate() method to get swap the `_id`s for the actual Task documents
-//   Project.findById(projectId)
-//     .populate("tasks")
-//     .then((project) => res.status(200).json(project))
-//     .catch((error) => res.json(error));
-// });
-
-// // PUT  /api/projects/:projectId  -  Updates a specific project by id
-// router.put("/projects/:projectId", (req, res, next) => {
-//   const { projectId } = req.params;
-
-//   if (!mongoose.Types.ObjectId.isValid(projectId)) {
-//     res.status(400).json({ message: "Specified id is not valid" });
-//     return;
-//   }
-
-//   Project.findByIdAndUpdate(projectId, req.body, { new: true })
-//     .then((updatedProject) => res.json(updatedProject))
-//     .catch((error) => res.json(error));
-// });
-
-// // DELETE  /api/projects/:projectId  -  Deletes a specific project by id
-// router.delete("/projects/:projectId", (req, res, next) => {
-//   const { projectId } = req.params;
-
-//   if (!mongoose.Types.ObjectId.isValid(projectId)) {
-//     res.status(400).json({ message: "Specified id is not valid" });
-//     return;
-//   }
-
-//   Project.findByIdAndRemove(projectId)
-//     .then(() =>
-//       res.json({
-//         message: `Project with ${projectId} is removed successfully.`,
-//       })
-//     )
-//     .catch((error) => res.json(error));
-// });
-
-// module.exports = router;
+module.exports = router;
