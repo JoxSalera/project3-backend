@@ -9,11 +9,4 @@ router.get("/", isAuthenticated, async (req, res, next) => {
   res.json(username, "Username found");
 });
 
-router.get("/:userId", (req, res, next) => {
-  res.json("profile route ok");
-});
-
-// EDIT PROFILE
-// router.put("/edit/:userId");
-
 module.exports = router;
