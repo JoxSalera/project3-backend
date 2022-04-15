@@ -46,7 +46,6 @@ const itinerarySeed = async () => {
       tags: [night._id],
     },
   ];
-
   const firstItinerary = await Itinerary.create(itineraries);
 };
 
