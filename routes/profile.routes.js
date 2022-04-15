@@ -16,7 +16,6 @@ router.get("/", isAuthenticated, async (req, res, next) => {
   }
 });
 
-<<<<<<< HEAD
 // GET PUBLIC USER ROUTE
 router.get("/:userId", async (req, res, next) => {
   try {
@@ -42,6 +41,4 @@ router.put("/edit", isAuthenticated, async (req, res, next) => {
   }
 });
 
-=======
->>>>>>> 1713ed67f18f920d3922553dcbdd33933bdd86e7
 module.exports = router;
