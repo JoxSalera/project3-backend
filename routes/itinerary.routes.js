@@ -58,7 +58,8 @@ router.put("/edit-itinerary/:itineraryId", async (req, res, next) => {
     const { itineraryId } = req.params;
     const editItinerary = await Itinerary.findByIdAndUpdate(
       itineraryId,
-      req.body
+      req.body,
+      { new: true }
     ).populate("creator tags");
     res.status(200).json([editItinerary, { message: "Itinerary updated!!" }]);
   } catch (err) {
