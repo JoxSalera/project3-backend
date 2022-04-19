@@ -3,12 +3,13 @@ require("../db/index.js");
 const Tag = require("../models/Tag.model");
 
 const tag = [
-  { name: "resto" },
-  { name: "week-end" },
   { name: "night" },
-  { name: "culture" },
-  { name: "sunny day" },
   { name: "beers" },
+  { name: "restaurant" },
+  { name: "week-end" },
+  { name: "sunny day" },
+  { name: "culture" },
+  { name: "outdoors" },
 ];
 
 const createTag = async () => {

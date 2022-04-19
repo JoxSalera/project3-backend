@@ -22,6 +22,11 @@ router.get("/itinerary/:itineraryId", async (req, res, next) => {
       itinerary: itineraryId,
     }).populate("itinerary");
     res.status(200).json(itineraryDetails);
+
+    // console.log(itineraryDetails, "reponses");
+    // let allItins = { ...itineraryDetails };
+    // console.log(allItins, "allitins");
+    res.status(200).json(allItins);
   } catch (err) {
     console.log(err, "ERROR ON ITINERARY/:ID PAGE!");
   }
