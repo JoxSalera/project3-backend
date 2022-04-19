@@ -17,13 +17,15 @@ router.get("/", isAuthenticated, async (req, res, next) => {
 });
 
 // GET PUBLIC USER ROUTE
+// get user profile, return a list of his itineraries
 router.get("/:userId", async (req, res, next) => {
   try {
-    const { publicUserId } = req.params;
-    const publicUser = await Itinerary.find(publicUserId).populate(
+    const { userId } = req.params;
+    const user = await User.findById(userId).select("name username");
+    const itineraries = await Itinerary.find({ userId }).populate(
       "creator tags"
     );
-    res.status(200).json({ publicUser });
+    res.status(200).json({ user, itineraries });
   } catch (err) {
     console.log(err, "ERROR ON PUBLIC USER ROUTE!");
   }
