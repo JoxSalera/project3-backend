@@ -12,6 +12,8 @@ const itineraryItemsSeed = async () => {
     name: "Marseille express",
   });
   const itineraryParis = await Itinerary.findOne({ name: "Paris express" });
+  const itineraryParis2 = await Itinerary.findOne({ name: "Paris life" });
+
   const itineraryBrussels = await Itinerary.findOne({
     name: "Brussels express",
   });
@@ -48,7 +50,7 @@ const itineraryItemsSeed = async () => {
       name: "La Seine",
       description:
         "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
-      itinerary: itineraryParis._id,
+      itinerary: itineraryParis2._id,
       address: {
         street: "Pont Alexandre III",
         streetNumber: "",

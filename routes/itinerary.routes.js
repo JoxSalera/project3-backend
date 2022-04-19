@@ -18,15 +18,11 @@ router.get("/itineraries", async (req, res, next) => {
 router.get("/itinerary/:itineraryId", async (req, res, next) => {
   try {
     const { itineraryId } = req.params;
-    const itineraryDetails = await ItineraryItem.find({
+    const itinerary = await Itinerary.findById(itineraryId).populate("tags");
+    const itineraryItem = await ItineraryItem.find({
       itinerary: itineraryId,
-    }).populate("itinerary");
-    res.status(200).json(itineraryDetails);
-
-    // console.log(itineraryDetails, "reponses");
-    // let allItins = { ...itineraryDetails };
-    // console.log(allItins, "allitins");
-    res.status(200).json(allItins);
+    });
+    res.status(200).json({ itineraryItem, itinerary });
   } catch (err) {
     console.log(err, "ERROR ON ITINERARY/:ID PAGE!");
   }
