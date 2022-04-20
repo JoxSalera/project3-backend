@@ -10,7 +10,10 @@ router.get("/itineraries", async (req, res, next) => {
     const q = req.query.q;
     console.log(q);
     const allItineraries = await Itinerary.find({
-      city: { $regex: q, $options: "i" },
+      $or: [
+        { city: { $regex: q, $options: "i" } },
+        { name: { $regex: q, $options: "i" } },
+      ],
     }).populate("creator tags");
     res.status(200).json(allItineraries);
   } catch (err) {
