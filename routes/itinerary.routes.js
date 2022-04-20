@@ -7,7 +7,11 @@ const User = require("../models/User.model");
 // GET ALL ITINERARIES
 router.get("/itineraries", async (req, res, next) => {
   try {
-    const allItineraries = await Itinerary.find().populate("creator tags");
+    const q = req.query.q;
+    console.log(q);
+    const allItineraries = await Itinerary.find({
+      city: { $regex: q, $options: "i" },
+    }).populate("creator tags");
     res.status(200).json(allItineraries);
   } catch (err) {
     console.log(err, "ERROR ON GET /ITINERARIES ROUTE");
