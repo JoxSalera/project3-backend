@@ -21,11 +21,13 @@ router.get("/", isAuthenticated, async (req, res, next) => {
 router.get("/:userId", async (req, res, next) => {
   try {
     const { userId } = req.params;
+
     const user = await User.findById(userId).select("name username");
     const itineraries = await Itinerary.find({ creator: userId }).populate(
       "creator tags"
     );
     res.status(200).json({ user, itineraries });
+
   } catch (err) {
     console.log(err, "ERROR ON PUBLIC USER ROUTE!");
   }

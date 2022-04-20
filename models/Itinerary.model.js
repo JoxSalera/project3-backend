@@ -18,7 +18,9 @@ const itinerarySchema = new Schema(
         ref: "Tag",
       },
     ],
-    rating: Number, //stars instead of numbers
+    image: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
