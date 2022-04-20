@@ -8,7 +8,6 @@ const { isAuthenticated } = require("../middleware/jwt.middleware");
 const User = require("../models/User.model");
 
 router.post("/signup", async (req, res, next) => {
-  console.log("hey");
   const { name, username, email, password, picture } = req.body;
 
   const foundUser = await User.findOne({ username });

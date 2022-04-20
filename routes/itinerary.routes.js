@@ -18,11 +18,13 @@ router.get("/itineraries", async (req, res, next) => {
 router.get("/itinerary/:itineraryId", async (req, res, next) => {
   try {
     const { itineraryId } = req.params;
-    const itinerary = await Itinerary.findById(itineraryId).populate("tags");
-    const itineraryItem = await ItineraryItem.find({
+    const itineraryDetails = await ItineraryItem.find({
       itinerary: itineraryId,
     });
-    res.status(200).json({ itineraryItem, itinerary });
+    const itinerary = await Itinerary.findById(itineraryId).populate(
+      "tags creator"
+    );
+    res.status(200).json({ itineraryDetails, itinerary });
   } catch (err) {
     console.log(err, "ERROR ON ITINERARY/:ID PAGE!");
   }
@@ -59,8 +61,7 @@ router.put("/edit-itinerary/:itineraryId", async (req, res, next) => {
     const { itineraryId } = req.params;
     const editItinerary = await Itinerary.findByIdAndUpdate(
       itineraryId,
-      req.body,
-      { new: true }
+      req.body
     ).populate("creator tags");
     res.status(200).json([editItinerary, { message: "Itinerary updated!!" }]);
   } catch (err) {

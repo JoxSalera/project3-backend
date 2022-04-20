@@ -1,8 +1,5 @@
 const router = require("express").Router();
-const Itinerary = require("../models/Itinerary.model");
-const ItineraryItem = require("../models/ItineraryItem.model");
 const Tag = require("../models/Tag.model");
-const User = require("../models/User.model");
 
 // GET ALL TAGS
 router.get("/tags", async (req, res, next) => {
