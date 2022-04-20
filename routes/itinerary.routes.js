@@ -7,7 +7,14 @@ const User = require("../models/User.model");
 // GET ALL ITINERARIES
 router.get("/itineraries", async (req, res, next) => {
   try {
-    const allItineraries = await Itinerary.find().populate("creator tags");
+    const q = req.query.q;
+    console.log(q);
+    const allItineraries = await Itinerary.find({
+      $or: [
+        { city: { $regex: q, $options: "i" } },
+        { name: { $regex: q, $options: "i" } },
+      ],
+    }).populate("creator tags");
     res.status(200).json(allItineraries);
   } catch (err) {
     console.log(err, "ERROR ON GET /ITINERARIES ROUTE");
@@ -20,8 +27,11 @@ router.get("/itinerary/:itineraryId", async (req, res, next) => {
     const { itineraryId } = req.params;
     const itineraryDetails = await ItineraryItem.find({
       itinerary: itineraryId,
-    }).populate("itinerary");
-    res.status(200).json(itineraryDetails);
+    });
+    const itinerary = await Itinerary.findById(itineraryId).populate(
+      "tags creator"
+    );
+    res.status(200).json({ itineraryDetails, itinerary });
   } catch (err) {
     console.log(err, "ERROR ON ITINERARY/:ID PAGE!");
   }
@@ -58,8 +68,7 @@ router.put("/edit-itinerary/:itineraryId", async (req, res, next) => {
     const { itineraryId } = req.params;
     const editItinerary = await Itinerary.findByIdAndUpdate(
       itineraryId,
-      req.body,
-      { new: true }
+      req.body
     ).populate("creator tags");
     res.status(200).json([editItinerary, { message: "Itinerary updated!!" }]);
   } catch (err) {
