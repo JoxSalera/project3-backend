@@ -65,11 +65,30 @@ router.post("/new-itinerary", async (req, res, next) => {
 // UPDATE
 router.put("/edit-itinerary/:itineraryId", async (req, res, next) => {
   try {
+    // First we update the itinerary document
     const { itineraryId } = req.params;
+    const itineraryToCreate = {
+      name: req.body.name,
+      city: req.body.city,
+      tags: req.body.tags,
+    };
     const editItinerary = await Itinerary.findByIdAndUpdate(
       itineraryId,
-      req.body
-    ).populate("creator tags");
+      itineraryToCreate
+    );
+
+    // Then we update the items related to that itinerary
+    for (let i = 0; i < req.body.items.length; i++) {
+      const item = req.body.items[i];
+      console.log(item);
+      const updatedItem = await ItineraryItem.findByIdAndUpdate(
+        item._id,
+        item,
+        { new: true }
+      );
+      console.log(updatedItem);
+    }
+
     res.status(200).json([editItinerary, { message: "Itinerary updated!!" }]);
   } catch (err) {
     console.log(err);
