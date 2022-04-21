@@ -5,19 +5,25 @@ const Itinerary = require("../models/Itinerary.model");
 
 const itineraryItemsSeed = async () => {
   const itineraryBarcelona = await Itinerary.findOne({
-    name: "Barcelona express",
+    name: "Express trip to Barcelona",
   });
-  const itineraryMadrid = await Itinerary.findOne({ name: "Madrid express" });
+  const itineraryMadrid = await Itinerary.findOne({
+    name: "Week-end in Madrid with friends",
+  });
   const itineraryMarseille = await Itinerary.findOne({
-    name: "Marseille express",
+    name: "Sunny Day in Marseille with the fam!",
   });
-  const itineraryParis = await Itinerary.findOne({ name: "Paris express" });
-  const itineraryParis2 = await Itinerary.findOne({ name: "Paris life" });
+  const itineraryParis = await Itinerary.findOne({ name: "1 day in Paris" });
+  const itineraryParis2 = await Itinerary.findOne({
+    name: "Touristy day in Paris :)",
+  });
 
   const itineraryBrussels = await Itinerary.findOne({
-    name: "Brussels express",
+    name: "Awesome week-end in Brussels!!",
   });
-  const itineraryBerlin = await Itinerary.findOne({ name: "Berlin express" });
+  const itineraryBerlin = await Itinerary.findOne({
+    name: "First time visiting Berlin",
+  });
 
   const itineraryItems = [
     {
@@ -31,7 +37,6 @@ const itineraryItemsSeed = async () => {
         postCode: "75001 Paris",
       },
       picture: "",
-      googlePlaceId: "",
     },
     {
       name: "Gato callejero",
@@ -44,7 +49,6 @@ const itineraryItemsSeed = async () => {
         postCode: "28013 Madrid",
       },
       picture: "",
-      googlePlaceId: "",
     },
     {
       name: "La Seine",
@@ -57,7 +61,6 @@ const itineraryItemsSeed = async () => {
         postCode: "75008 Paris",
       },
       picture: "",
-      googlePlaceId: "",
     },
     {
       name: "Das Saucissen",
@@ -70,7 +73,6 @@ const itineraryItemsSeed = async () => {
         postCode: "12055 Berlin",
       },
       picture: "",
-      googlePlaceId: "",
     },
     {
       name: "Ricard Time",
@@ -83,7 +85,6 @@ const itineraryItemsSeed = async () => {
         postCode: "13014 Marseille",
       },
       picture: "",
-      googlePlaceId: "",
     },
     {
       name: "Catalan route",
@@ -96,7 +97,6 @@ const itineraryItemsSeed = async () => {
         postCode: "08037 Barcelona",
       },
       picture: "",
-      googlePlaceId: "",
     },
     {
       name: "A l'aise",
@@ -109,7 +109,6 @@ const itineraryItemsSeed = async () => {
         postCode: "1000 Bruxelles",
       },
       picture: "",
-      googlePlaceId: "",
     },
   ];
 

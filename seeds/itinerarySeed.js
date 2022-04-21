@@ -20,43 +20,43 @@ const itinerarySeed = async () => {
 
   const itineraries = [
     {
-      name: "Paris express",
+      name: "Touristy day in Paris :)",
       creator: daniel._id,
       city: "Paris",
-      tags: [night._id, restaurant._id, weekend._id],
+      tags: [culture._id, restaurant._id, weekend._id],
     },
     {
-      name: "Madrid express",
+      name: "Week-end in Madrid with friends",
       creator: rufus._id,
       city: "Madrid",
       tags: [night._id, beers._id, weekend._id],
     },
     {
-      name: "Paris life",
+      name: "1 day in Paris",
       creator: rufus._id,
       city: "Paris",
-      tags: [sunnyday._id, weekend._id],
+      tags: [sunnyday._id, restaurant._id],
     },
     {
-      name: "Berlin express",
+      name: "First time visiting Berlin!",
       creator: al._id,
       city: "Berlin",
       tags: [night._id, culture._id, outdoors._id],
     },
     {
-      name: "Marseille express",
+      name: "Sunny Day in Marseille with the fam!",
       creator: rufus._id,
       city: "Marseille",
       tags: [sunnyday._id, restaurant._id, weekend._id],
     },
     {
-      name: "Barcelona express",
+      name: "Express trip to Barcelona",
       creator: tintin._id,
       city: "Barcelona",
       tags: [sunnyday._id, restaurant._id],
     },
     {
-      name: "Brussels express",
+      name: "Awesome week-end in Brussels!!",
       creator: daniel._id,
       city: "Brussels",
       tags: [night._id, beers._id, outdoors._id, culture._id],
