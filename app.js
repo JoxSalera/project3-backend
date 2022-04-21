@@ -21,7 +21,7 @@ require("./config")(app);
 
 app.use("/api", require("./routes/tag.routes"));
 
-app.use("/auth", require("./routes/auth.routes"));
+app.use("/api/auth", require("./routes/auth.routes"));
 
 const itineraries = require("./routes/itinerary.routes");
 app.use("/api", itineraries);

@@ -19,7 +19,7 @@ router.get("/", isAuthenticated, async (req, res, next) => {
 
 // GET PUBLIC USER ROUTE
 // get user profile, return a list of his itineraries
-router.get("/:userId", isAuthenticated, async (req, res, next) => {
+router.get("/:userId", async (req, res, next) => {
   try {
     const { userId } = req.params;
 
