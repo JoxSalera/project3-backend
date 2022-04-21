@@ -6,9 +6,10 @@ const User = require("../models/User.model");
 
 router.get("/", isAuthenticated, async (req, res, next) => {
   try {
-    const user = await User.findById(req.payload._id);
+    const user = await User.findOne({ username: req.payload.username });
+    console.log(req.payload);
     const userItinerary = await Itinerary.find({
-      creator: req.payload._id,
+      creator: user._id,
     }).populate("tags");
     res.status(200).json({ userItinerary, user });
   } catch (err) {
@@ -18,7 +19,7 @@ router.get("/", isAuthenticated, async (req, res, next) => {
 
 // GET PUBLIC USER ROUTE
 // get user profile, return a list of his itineraries
-router.get("/:userId", async (req, res, next) => {
+router.get("/:userId", isAuthenticated, async (req, res, next) => {
   try {
     const { userId } = req.params;
 
@@ -27,7 +28,6 @@ router.get("/:userId", async (req, res, next) => {
       "creator tags"
     );
     res.status(200).json({ user, itineraries });
-
   } catch (err) {
     console.log(err, "ERROR ON PUBLIC USER ROUTE!");
   }
