@@ -17,6 +17,9 @@ const itineraryItemsSeed = async () => {
   const itineraryParis2 = await Itinerary.findOne({
     name: "Touristy day in Paris :)",
   });
+  const itineraryParis3 = await Itinerary.findOne({
+    name: "Touristy day in Paris :)",
+  });
 
   const itineraryBrussels = await Itinerary.findOne({
     name: "Awesome week-end in Brussels!!",
@@ -29,14 +32,15 @@ const itineraryItemsSeed = async () => {
     {
       name: "Pizzeria Populare",
       description:
-        "Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.",
+        "'Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.'",
       itinerary: itineraryParis._id,
       address: {
         street: "Rue Réaumur",
         streetNumber: "111",
         postCode: "75002 Paris",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1627626775846-122b778965ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
     {
       name: "Espit Chupitos",
@@ -47,19 +51,21 @@ const itineraryItemsSeed = async () => {
         streetNumber: "22",
         postCode: "28012 Madrid",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1598373728278-73ad46eaa0da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
     },
     {
       name: "La Seine",
       description:
-        "Went for a nice walk along the Seine river with my husband and sons. I wuld have had a much better time without them, but oh well.",
+        " 'Went for a nice walk along the Seine river with my husband and sons. I would have had a much better time without them, but oh well.'",
       itinerary: itineraryParis2._id,
       address: {
         street: "Pont Alexandre III",
         streetNumber: "",
         postCode: "75008 Paris",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1537125267200-ca6a358c1947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
     {
       name: "Schleusenkrug",
@@ -70,43 +76,86 @@ const itineraryItemsSeed = async () => {
         streetNumber: 44,
         postCode: "12055 Berlin",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1585325701165-351af916e581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2F1c2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
     },
     {
       name: "Bar Gaspard",
       description:
-        "We found this bar randomly, and what a nice place to drink a good ol' Ricard! ",
+        "'We found this bar randomly, and what a nice place to drink a good ol' Ricard!' ",
       itinerary: itineraryMarseille._id,
       address: {
         street: "Rue Berthelot",
         streetNumber: 4,
         postCode: "13014 Marseille",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1568644396922-5c3bfae12521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
     {
       name: "Parc de la Ciutadella",
       description:
-        "Big park with many trees and a nice fountain. Great place to rest, read, do yoga or have a mental breakdown.",
+        "'Big park with many trees and a nice fountain. Great place to rest, read, do yoga or have a mental breakdown.'",
       itinerary: itineraryBarcelona._id,
       address: {
         street: "Carrer de Còrsega (La Pepita)",
         streetNumber: 343,
         postCode: "08037 Barcelona",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1576516250828-3a336a4d65be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
     },
     {
       name: "Bar A la mort subite",
       description:
-        "I don't remember anything that happened in this bar. 10/10 would recommend!",
+        "'I don't remember anything that happened in this bar. 10/10 would recommend!'",
       itinerary: itineraryBrussels._id,
       address: {
         street: "Imp. de la Fidélité (Delirium Café)",
         streetNumber: 4,
         postCode: "1000 Bruxelles",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    },
+    {
+      name: "Jardin du Luxembourg",
+      description:
+        " 'We went on a tuesday morning so the park was very calm. Perfect place for my children to run around! The weather was ideal.'",
+      itinerary: itineraryParis2._id,
+      address: {
+        street: "",
+        streetNumber: "",
+        postCode: "75006 Paris",
+      },
+      picture:
+        "https://images.unsplash.com/photo-1605049296091-b7583cc7ac83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+    },
+    {
+      name: "Pizzeria Populare",
+      description:
+        "'Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.'",
+      itinerary: itineraryParis2._id,
+      address: {
+        street: "Rue Réaumur",
+        streetNumber: "111",
+        postCode: "75002 Paris",
+      },
+      picture:
+        "https://images.unsplash.com/photo-1627626775846-122b778965ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    },
+    {
+      name: "Louvre",
+      description:
+        " 'It takes a few hours to see everything. Kids are not patient and hated it. Oh how i wish I didn't have kids...' ",
+      itinerary: itineraryParis2._id,
+      address: {
+        street: "Rue de Rivoli",
+        streetNumber: "",
+        postCode: "7500A Paris",
+      },
+      picture:
+        "https://images.unsplash.com/photo-1597923896141-d4de3119853e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80",
     },
   ];
 
