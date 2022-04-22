@@ -27,88 +27,86 @@ const itineraryItemsSeed = async () => {
 
   const itineraryItems = [
     {
-      name: "Green Places",
+      name: "Pizzeria Populare",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+        "Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.",
       itinerary: itineraryParis._id,
       address: {
-        street: "Pl. de la Concorde",
-        streetNumber: "",
-        postCode: "75001 Paris",
+        street: "Rue Réaumur",
+        streetNumber: "111",
+        postCode: "75002 Paris",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
     {
-      name: "Gato callejero",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+      name: "Espit Chupitos",
+      description: "Loved the chupitos and music, but rude waitresses!! 🙄",
       itinerary: itineraryMadrid._id,
       address: {
-        street: "Puerta del Sol",
-        streetNumber: "",
-        postCode: "28013 Madrid",
+        street: "Calle de Espoz y Mina",
+        streetNumber: "22",
+        postCode: "28012 Madrid",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
     {
       name: "La Seine",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+        "Went for a nice walk along the Seine river with my husband and sons. I wuld have had a much better time without them, but oh well.",
       itinerary: itineraryParis2._id,
       address: {
         street: "Pont Alexandre III",
         streetNumber: "",
         postCode: "75008 Paris",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
     {
-      name: "Das Saucissen",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+      name: "Schleusenkrug",
+      description: "I don't know what a Schleusenkrug is but I loved it.",
       itinerary: itineraryBerlin._id,
       address: {
         street: "Kirchhofstraße (BDSM Lounge Berlin)",
         streetNumber: 44,
         postCode: "12055 Berlin",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
     {
-      name: "Ricard Time",
+      name: "Bar Gaspard",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+        "We found this bar randomly, and what a nice place to drink a good ol' Ricard! ",
       itinerary: itineraryMarseille._id,
       address: {
         street: "Rue Berthelot",
         streetNumber: 4,
         postCode: "13014 Marseille",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
     {
-      name: "Catalan route",
+      name: "Parc de la Ciutadella",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+        "Big park with many trees and a nice fountain. Great place to rest, read, do yoga or have a mental breakdown.",
       itinerary: itineraryBarcelona._id,
       address: {
         street: "Carrer de Còrsega (La Pepita)",
         streetNumber: 343,
         postCode: "08037 Barcelona",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
     {
-      name: "A l'aise",
+      name: "Bar A la mort subite",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias aut, repellat ipsum facere voluptate dicta obcaecati deserunt nobis suscipit eaque?",
+        "I don't remember anything that happened in this bar. 10/10 would recommend!",
       itinerary: itineraryBrussels._id,
       address: {
         street: "Imp. de la Fidélité (Delirium Café)",
         streetNumber: 4,
         postCode: "1000 Bruxelles",
       },
-      picture: "",
+      picture: "https://picsum.photos/200/300",
     },
   ];
 
