@@ -75,6 +75,79 @@ const itinerarySeed = async () => {
       city: "Brussels",
       tags: [night._id, beers._id, outdoors._id, culture._id],
     },
+
+    {
+      name: "Friends trip in Amsterdam <3",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1583295125721-766a0088cd3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      city: "Amsterdam",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Romantic trip in Venezia",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1638376851565-42db4491b05b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+      city: "Amsterdam",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "2 day visit of NYC",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/flagged/photo-1575597255483-55f2afb6f42c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      city: "Amsterdam",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Lovely week-end in Paris",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1615650102043-deaefad6ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+      city: "Paris",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Family trip - 2 days in Paris",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1541628951107-a9af5346a3e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80",
+      city: "Paris",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Museums and wine tasting!",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=395&q=80",
+      city: "Paris",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Family week-end in London",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1615650102043-deaefad6ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+      city: "London",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Amazing Italian getaway with our family",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1568323993156-14d2eeaec2bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      city: "Florence",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
+    {
+      name: "Munich: great city to visit with family!",
+      creator: daniel._id,
+      image:
+        "https://images.unsplash.com/photo-1611693088055-f20ef834328a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      city: "Munich",
+      tags: [beers._id, restaurant._id, weekend._id],
+    },
   ];
   const firstItinerary = await Itinerary.create(itineraries);
 };

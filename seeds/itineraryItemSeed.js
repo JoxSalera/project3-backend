@@ -17,6 +17,9 @@ const itineraryItemsSeed = async () => {
   const itineraryParis2 = await Itinerary.findOne({
     name: "Touristy day in Paris :)",
   });
+  const itineraryParis3 = await Itinerary.findOne({
+    name: "Touristy day in Paris :)",
+  });
 
   const itineraryBrussels = await Itinerary.findOne({
     name: "Awesome week-end in Brussels!!",
@@ -54,7 +57,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "La Seine",
       description:
-        "Went for a nice walk along the Seine river with my husband and sons. I wuld have had a much better time without them, but oh well.",
+        "Went for a nice walk along the Seine river with my husband and sons. I would have had a much better time without them, but oh well.",
       itinerary: itineraryParis2._id,
       address: {
         street: "Pont Alexandre III",
@@ -114,6 +117,45 @@ const itineraryItemsSeed = async () => {
       },
       picture:
         "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    },
+    {
+      name: "Jardin du Luxembourg",
+      description:
+        " 'We went on a tuesday morning so the park was very calm. Perfect place for my children to run around! The weather was ideal.'",
+      itinerary: itineraryParis2._id,
+      address: {
+        street: "",
+        streetNumber: "",
+        postCode: "75006 Paris",
+      },
+      picture:
+        "https://images.unsplash.com/photo-1605049296091-b7583cc7ac83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+    },
+    {
+      name: "Pizzeria Populare",
+      description:
+        "Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.",
+      itinerary: itineraryParis2._id,
+      address: {
+        street: "Rue Réaumur",
+        streetNumber: "111",
+        postCode: "75002 Paris",
+      },
+      picture:
+        "https://images.unsplash.com/photo-1627626775846-122b778965ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    },
+    {
+      name: "Louvre",
+      description:
+        " 'It takes a few hours to see everything. Kids are not patient and hated it. Oh how i wish I didn't have kids...' ",
+      itinerary: itineraryParis2._id,
+      address: {
+        street: "Rue de Rivoli",
+        streetNumber: "",
+        postCode: "7500A Paris",
+      },
+      picture:
+        "https://images.unsplash.com/photo-1597923896141-d4de3119853e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80",
     },
   ];
 
