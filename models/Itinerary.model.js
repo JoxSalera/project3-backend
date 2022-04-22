@@ -20,6 +20,7 @@ const itinerarySchema = new Schema(
     ],
     image: {
       type: String,
+      default: "https://images.unsplash.com/photo-1570698473651-b2de99bae12f",
     },
   },
   { timestamps: true }
