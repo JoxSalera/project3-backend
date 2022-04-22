@@ -7,10 +7,11 @@ const User = require("../models/User.model");
 router.get("/", isAuthenticated, async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.payload.username });
-    console.log(req.payload);
+    // console.log(req.payload);
     const userItinerary = await Itinerary.find({
       creator: user._id,
     }).populate("tags");
+    console.log({ userItinerary });
     res.status(200).json({ userItinerary, user });
   } catch (err) {
     console.error(err, "ERROR ON PROFILE ROUTE!");
