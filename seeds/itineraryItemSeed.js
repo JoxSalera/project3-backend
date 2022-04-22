@@ -36,7 +36,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: "111",
         postCode: "75002 Paris",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1627626775846-122b778965ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
     {
       name: "Espit Chupitos",
@@ -47,7 +48,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: "22",
         postCode: "28012 Madrid",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1598373728278-73ad46eaa0da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
     },
     {
       name: "La Seine",
@@ -59,7 +61,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: "",
         postCode: "75008 Paris",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1537125267200-ca6a358c1947?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
     {
       name: "Schleusenkrug",
@@ -70,7 +73,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: 44,
         postCode: "12055 Berlin",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1585325701165-351af916e581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2F1c2FnZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
     },
     {
       name: "Bar Gaspard",
@@ -82,7 +86,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: 4,
         postCode: "13014 Marseille",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1568644396922-5c3bfae12521?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
     {
       name: "Parc de la Ciutadella",
@@ -94,7 +99,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: 343,
         postCode: "08037 Barcelona",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1576516250828-3a336a4d65be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
     },
     {
       name: "Bar A la mort subite",
@@ -106,7 +112,8 @@ const itineraryItemsSeed = async () => {
         streetNumber: 4,
         postCode: "1000 Bruxelles",
       },
-      picture: "https://picsum.photos/200/300",
+      picture:
+        "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
     },
   ];
 
