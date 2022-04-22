@@ -22,7 +22,7 @@ const itineraryItemsSeed = async () => {
     name: "Awesome week-end in Brussels!!",
   });
   const itineraryBerlin = await Itinerary.findOne({
-    name: "First time visiting Berlin",
+    name: "First time visiting Berlin!",
   });
 
   const itineraryItems = [
