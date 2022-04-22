@@ -32,7 +32,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "Pizzeria Populare",
       description:
-        "Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.",
+        "'Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.'",
       itinerary: itineraryParis._id,
       address: {
         street: "Rue Réaumur",
@@ -57,7 +57,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "La Seine",
       description:
-        "Went for a nice walk along the Seine river with my husband and sons. I would have had a much better time without them, but oh well.",
+        " 'Went for a nice walk along the Seine river with my husband and sons. I would have had a much better time without them, but oh well.'",
       itinerary: itineraryParis2._id,
       address: {
         street: "Pont Alexandre III",
@@ -82,7 +82,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "Bar Gaspard",
       description:
-        "We found this bar randomly, and what a nice place to drink a good ol' Ricard! ",
+        "'We found this bar randomly, and what a nice place to drink a good ol' Ricard!' ",
       itinerary: itineraryMarseille._id,
       address: {
         street: "Rue Berthelot",
@@ -95,7 +95,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "Parc de la Ciutadella",
       description:
-        "Big park with many trees and a nice fountain. Great place to rest, read, do yoga or have a mental breakdown.",
+        "'Big park with many trees and a nice fountain. Great place to rest, read, do yoga or have a mental breakdown.'",
       itinerary: itineraryBarcelona._id,
       address: {
         street: "Carrer de Còrsega (La Pepita)",
@@ -108,7 +108,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "Bar A la mort subite",
       description:
-        "I don't remember anything that happened in this bar. 10/10 would recommend!",
+        "'I don't remember anything that happened in this bar. 10/10 would recommend!'",
       itinerary: itineraryBrussels._id,
       address: {
         street: "Imp. de la Fidélité (Delirium Café)",
@@ -134,7 +134,7 @@ const itineraryItemsSeed = async () => {
     {
       name: "Pizzeria Populare",
       description:
-        "Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.",
+        "'Very nice restaurant and atmosphere, but tables were too close to each other. I need my personal space.'",
       itinerary: itineraryParis2._id,
       address: {
         street: "Rue Réaumur",
